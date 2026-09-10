@@ -39,7 +39,7 @@
       </Label>
       <TextField fx:id="txtDirectorio" layoutX="36.0" layoutY="298.0" prefHeight="26.0" prefWidth="391.0" promptText="No se ha seleccionado una carpeta" />
       <Button fx:id="btnSelecDirectorio" layoutX="447.0" layoutY="299.0" mnemonicParsing="false" onAction="#selecDirectorio" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: #DCE8B4;" text="Seleccionar carpeta" />
-      <Button fx:id="btnAggObservacion" layoutX="36.0" layoutY="355.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" style="-fx-background-color: #CDDAFD;" text="Agregar observación" />
+      <Button fx:id="btnAggObservacion" layoutX="36.0" layoutY="355.0" mnemonicParsing="false" onAction="#mostrarDialog" prefHeight="26.0" prefWidth="140.0" style="-fx-background-color: #CDDAFD;" text="Agregar observación" />
       <Button fx:id="btnGuardar" layoutX="200.0" layoutY="356.0" mnemonicParsing="false" onAction="#Guardar" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #FDE2E4;" text="Guardar" />
       <Separator layoutX="34.0" layoutY="416.0" prefHeight="3.0" prefWidth="532.0" />
       <Label layoutX="36.0" layoutY="430.0" text="Resultado">

@@ -1,10 +1,7 @@
 package com.example.ejerciciopractica;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 
@@ -17,7 +14,7 @@ public class RegistroDocumentoController {
     private TextField txtNombreDocumento;
 
     @FXML
-    private TextField txtDescripcion;
+    private TextArea txtDescripcion;
 
     @FXML
     private TextField txtArchivoSelec;
@@ -26,7 +23,7 @@ public class RegistroDocumentoController {
     private TextField txtDirectorio;
 
     @FXML
-    private TextField txtResultado;
+    private TextArea txtResultado;
 
     @FXML
     private Button btnSelecArchivo;
@@ -49,6 +46,7 @@ public class RegistroDocumentoController {
     private void selecDirectorio(){
         DirectoryChooser dc = new DirectoryChooser();
         dc.setTitle("Seleccionar archivo");
+        dc.setInitialDirectory(new File("c: \\"));
         File directorio = dc.showDialog(btnSelecArchivo.getScene().getWindow());
 
         if (directorio != null) {
@@ -71,14 +69,46 @@ public class RegistroDocumentoController {
 
     }
 
-    @FXML
-    private void mostrarAlerta(){
-
+    private void mostrarResultado(){
+        txtResultado.setText(txtNombreDocumento.getText());
     }
 
     @FXML
-    private void Guardar(){
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje){
+        Alert alert = new Alert(tipo);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
 
+    }
+
+
+    @FXML
+    private void Guardar(){
+        if(validarFormulario()){
+            return;
+        }
+        mostrarConfirmacion();
+
+    }
+
+    private boolean validarFormulario() {
+        return true;
+    }
+
+    @FXML
+    private void mostrarDialog(){
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Agregue una observación");
+        dialog.setHeaderText("Observación del documento");
+        dialog.setContentText("Observación:");
+        Optional<String> resultado = dialog.showAndWait();
+        resultado.ifPresent(valor -> {
+            if(valor.isBlank()){
+                txtResultado.appendText("Observación: " + valor + "\n");
+            }
+        });
     }
 
 

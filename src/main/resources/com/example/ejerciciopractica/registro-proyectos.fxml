@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="526.0" prefWidth="600.0" style="-fx-background-color: #EDE4D3;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejerciciopractica.RegistroProyectosController">
+    <children>
+        <Label layoutX="161.0" layoutY="14.0" prefHeight="30.0" prefWidth="238.0" text="Registro de proyectos" textFill="#3e2e22">
+            <font>
+                <Font name="Tw Cen MT Bold" size="26.0" />
+            </font>
+        </Label>
+        <Separator prefWidth="200.0" />
+        <Separator layoutX="36.0" layoutY="45.0" prefHeight="3.0" prefWidth="532.0" />
+
+        <Label layoutX="36.0" layoutY="55.0" text="Nombre del proyecto">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtNombreProyecto" layoutX="36.0" layoutY="83.0" prefHeight="26.0" prefWidth="532.0" promptText="Digite el nombre del proyecto" />
+
+        <Label layoutX="36.0" layoutY="122.0" text="Responsable">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtResponsable" layoutX="36.0" layoutY="150.0" prefHeight="26.0" prefWidth="532.0" promptText="Escriba el nombre del responsable" />
+
+        <Label layoutX="36.0" layoutY="200.0" text="Archivo Seleccionado">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtArchivoSelec" layoutX="36.0" layoutY="227.0" prefHeight="26.0" prefWidth="391.0" promptText="No se ha seleccionado un archivo" text="C:\Documentos" />
+        <Button fx:id="btnSelecArchivo" layoutX="447.0" layoutY="228.0" mnemonicParsing="false" onAction="#selecArchivo" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: #C9B79C;" text="Seleccionar archivo" />
+
+        <Label layoutX="36.0" layoutY="269.0" text="Carpeta de destino">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtDirectorio" layoutX="36.0" layoutY="298.0" prefHeight="26.0" prefWidth="391.0" promptText="No se ha seleccionado una carpeta" text="C:\Documentos" />
+        <Button fx:id="btnSelecDirectorio" layoutX="447.0" layoutY="299.0" mnemonicParsing="false" onAction="#selecDirectorio" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: #C9B79C;" text="Seleccionar carpeta" />
+
+        <Button fx:id="btnAggObservacion" layoutX="36.0" layoutY="355.0" mnemonicParsing="false" onAction="#mostrarDialog" prefHeight="26.0" prefWidth="140.0" style="-fx-background-color: #9C7A54;" text="Agregar observación" textFill="WHITE" />
+        <Button fx:id="btnGuardar" layoutX="200.0" layoutY="356.0" mnemonicParsing="false" onAction="#Guardar" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #6B4F3A;" text="Guardar" textFill="WHITE" />
+
+        <Separator layoutX="34.0" layoutY="416.0" prefHeight="3.0" prefWidth="532.0" />
+
+        <Label layoutX="36.0" layoutY="430.0" text="Tareas">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="txtTareas" layoutX="34.0" layoutY="460.0" prefHeight="26.0" prefWidth="532.0" />
+    </children>
+</AnchorPane>
